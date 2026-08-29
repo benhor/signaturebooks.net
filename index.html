@@ -1,202 +1,114 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signature Books</title>
-    <style>
-        /* Modern, elegant styling */
-        :root {
-            --primary: #2c3e50;
-            --accent: #b89742;
-            --bg: #fdfcf9;
-            --text: #333333;
-        }
-        
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.8;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SignatureBooks</title>
 
-        header {
-            background-color: white;
-            border-bottom: 1px solid #eaeaea;
-            padding: 30px 20px;
-            text-align: center;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: var(--primary);
-            letter-spacing: 2px;
-        }
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+}
 
-        header p {
-            margin: 5px 0 0 0;
-            font-style: italic;
-            color: #666;
-        }
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    padding: 12px 8px;
+    text-align: center;
+    z-index: 1000;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+}
 
-        section {
-            margin-bottom: 60px;
-        }
+nav button:hover {
+    text-decoration: underline;
+}
 
-        h2 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
+.page {
+    display: none;
+    min-height: 100vh;
+    padding-top: 55px;
+    text-align: center;
+}
 
-        .book-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
+.page.active {
+    display: block;
+}
 
-        .book-card {
-            background: white;
-            padding: 20px;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-            text-align: center;
-        }
+.page img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 
-        .book-card h3 {
-            margin: 10px 0 5px 0;
-            color: var(--primary);
-        }
-
-        .book-card p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 30px;
-            border: 1px solid #eee;
-            border-radius: 4px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
-
-        button {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: sans-serif;
-            transition: background 0.2s;
-        }
-
-        button:hover {
-            background-color: var(--accent);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9rem;
-            color: #888;
-            border-top: 1px solid #eaeaea;
-            background: white;
-        }
-    </style>
+@media (max-width: 600px) {
+    nav button {
+        font-size: 13px;
+        margin: 0 4px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>SIGNATURE BOOKS</h1>
-        <p>Curating stories that leave a mark.</p>
-    </header>
+<nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('books')">Featured Books</button>
+    <button onclick="showPage('about')">About</button>
+    <button onclick="showPage('written')">The Written Word</button>
+    <button onclick="showPage('contact')">Contact</button>
+</nav>
 
-    <div class="container">
-        
-        <section id="about">
-            <h2>Welcome to Signature Books</h2>
-            <p>Welcome to our new digital home. We are dedicated to celebrating literature, publishing exceptional voices, and connecting readers with books that resonate deeply. Whether you are searching for your next great read or looking for a home for your manuscript, Signature Books is built on a passion for the written word.</p>
-        </section>
+<section id="home" class="page active">
+    <img src="1.png" alt="SignatureBooks Home">
+</section>
 
-        <section id="featured">
-            <h2>Featured Collections</h2>
-            <div class="book-grid">
-                <div class="book-card">
-                    <h3>Title of Featured Book One</h3>
-                    <p>By Author Name</p>
-                </div>
-                <div class="book-card">
-                    <h3>Title of Featured Book Two</h3>
-                    <p>By Author Name</p>
-                </div>
-                <div class="book-card">
-                    <h3>Title of Featured Book Three</h3>
-                    <p>By Author Name</p>
-                </div>
-            </div>
-        </section>
+<section id="books" class="page">
+    <img src="2.png" alt="SignatureBooks Featured Books">
+</section>
 
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <p>Have questions about our titles, submissions, or upcoming events? Send us a message.</p>
-            <form class="contact-form" action="https://formspree.io" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
+<section id="about" class="page">
+    <img src="3.png" alt="About SignatureBooks">
+</section>
 
-    </div>
+<section id="written" class="page">
+    <img src="4.png" alt="The Written Word">
+</section>
 
-    <footer>
-        <p>&copy; 2026 Signature Books. All rights reserved.</p>
-    </footer>
+<section id="contact" class="page">
+    <img src="5.png" alt="SignatureBooks Contact">
+</section>
+
+<script>
+function showPage(pageName) {
+    document.querySelectorAll('.page').forEach(function(page) {
+        page.classList.remove('active');
+    });
+
+    document.getElementById(pageName).classList.add('active');
+
+    window.scrollTo(0, 0);
+}
+</script>
 
 </body>
 </html>
