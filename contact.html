@@ -1,59 +1,95 @@
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-  <input type="hidden" name="cmd" value="_xclick">
-  <input type="hidden" name="business" value="legacybridge@consultant.com">
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Prices - Signature Books</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background-color: #fcfbf7; text-align: center; }
+        nav { background: #2c3e50; padding: 15px; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1rem; }
+        nav a:hover { color: #b89742; }
+        .page-container { max-width: 1000px; margin: 20px auto; padding: 0 10px; }
+        img { width: 100%; height: auto; display: block; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 40px; }
+        
+        /* Form Styling */
+        form { background: white; padding: 30px; border: 1px solid #eee; border-radius: 4px; max-width: 500px; margin: 0 auto 5px auto; text-align: left; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        h3 { color: #2c3e50; margin-top: 0; border-bottom: 2px solid #b89742; padding-bottom: 10px; }
+        label { font-weight: bold; display: block; margin-bottom: 5px; color: #333; }
+        select, input[type="text"] { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 1rem; }
+        button { background-color: #2c3e50; color: white; border: none; padding: 12px 24px; font-size: 1.1rem; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold; transition: background 0.2s; }
+        button:hover { background-color: #b89742; }
+    </style>
+</head>
+<body>
 
-  <!-- REQUIRED BY PAYPAL -->
-  <input type="hidden" name="item_name" value="SignatureBooks Purchase">
-  <input type="hidden" name="item_number" value="SB-001">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="FeatureBOOKS.html">Featured Books</a>
+        <a href="About Us.html">About Us</a>
+        <a href="Written Word.html">Written Word</a>
+        <a href="contact.html">Contact & Prices</a>
+    </nav>
 
-  <h3>Select Your Book</h3>
+    <div class="page-container">
+        <!-- Displays your Contact, Books, and Prices image -->
+        <img src="5.png" alt="Contact, Books, and Prices">
 
-  <label for="book">Book Title:</label>
-  <select name="custom" id="book">
-    <option value="Reggae – The Philosophy">Reggae – The Philosophy</option>
-    <option value="Good Person">Good Person</option>
-    <option value="Coping with Prostate">Coping with Prostate</option>
-    <option value="Angry White Male">Angry White Male</option>
-    <option value="Second Chance">Second Chance</option>
-    <option value="Leave the Church">Leave the Church</option>
-    <option value="Happiness">Happiness</option>
-    <option value="Orgasm">Orgasm</option>
-    <option value="The PLOT">The PLOT</option>
-    <option value="New South">New South</option>
-    <option value="Black America">Black America</option>
-  </select>
+        <!-- PayPal Purchase Form -->
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="legacybridge@consultant.com">
 
-  <br><br>
+          <!-- REQUIRED BY PAYPAL -->
+          <input type="hidden" name="item_name" value="SignatureBooks Purchase">
+          <input type="hidden" name="item_number" value="SB-001">
 
-  <label for="format">Format:</label>
-  <select name="custom2" id="format">
-    <option value="Hardcover">Hardcover – $17.99</option>
-    <option value="Perfectbound">Perfectbound – $12.99</option>
-    <option value="Ebook">Ebook – $2.99</option>
-  </select>
+          <h3>Select Your Book</h3>
 
-  <input type="hidden" name="currency_code" value="USD">
+          <label for="book">Book Title:</label>
+          <select name="custom" id="book">
+            <option value="Reggae – The Philosophy">Reggae – The Philosophy</option>
+            <option value="Good Person">Good Person</option>
+            <option value="Coping with Prostate">Coping with Prostate</option>
+            <option value="Angry White Male">Angry White Male</option>
+            <option value="Second Chance">Second Chance</option>
+            <option value="Leave the Church">Leave the Church</option>
+            <option value="Happiness">Happiness</option>
+            <option value="Orgasm">Orgasm</option>
+            <option value="The PLOT">The PLOT</option>
+            <option value="New South">New South</option>
+            <option value="Black America">Black America</option>
+          </select>
 
-  <br><br>
+          <label for="format">Format:</label>
+          <select name="custom2" id="format">
+            <option value="Hardcover">Hardcover – $17.99</option>
+            <option value="Perfectbound">Perfectbound – $12.99</option>
+            <option value="Ebook">Ebook – $2.99</option>
+          </select>
 
-  <label for="amount">Price:</label>
-  <input type="text" name="amount" id="amount" value="17.99" readonly>
+          <input type="hidden" name="currency_code" value="USD">
 
-  <script>
-    const prices = {
-      "Hardcover": "17.99",
-      "Perfectbound": "12.99",
-      "Ebook": "2.99"
-    };
+          <label for="amount">Price (USD):</label>
+          <input type="text" name="amount" id="amount" value="17.99" readonly>
 
-    document.getElementById("format").addEventListener("change", function() {
-      document.getElementById("amount").value = prices[this.value];
-    });
-  </script>
+          <button type="submit">
+            Buy Now via PayPal
+          </button>
+        </form>
+    </div>
 
-  <br><br>
+    <script>
+      const prices = {
+        "Hardcover": "17.99",
+        "Perfectbound": "12.99",
+        "Ebook": "2.99"
+      };
 
-  <button type="submit" style="padding:10px 20px; font-size:16px;">
-    Buy Now
-  </button>
-</form>
+      document.getElementById("format").addEventListener("change", function() {
+        document.getElementById("amount").value = prices[this.value];
+      });
+    </script>
+
+</body>
+</html>
