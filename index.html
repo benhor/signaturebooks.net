@@ -1,114 +1,65 @@
-<!DOCTYPE html>
+
+html<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SignatureBooks</title>
-
-<style>
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-    font-family: Arial, sans-serif;
-}
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.85);
-    padding: 12px 8px;
-    text-align: center;
-    z-index: 1000;
-}
-
-nav button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    margin: 0 10px;
-    cursor: pointer;
-}
-
-nav button:hover {
-    text-decoration: underline;
-}
-
-.page {
-    display: none;
-    min-height: 100vh;
-    padding-top: 55px;
-    text-align: center;
-}
-
-.page.active {
-    display: block;
-}
-
-.page img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-@media (max-width: 600px) {
-    nav button {
-        font-size: 13px;
-        margin: 0 4px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Written Word - Signature Books</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background-color: #fcfbf7; text-align: center; }
+        nav { background: #2c3e50; padding: 15px; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1rem; }
+        nav a:hover { color: #b89742; }
+        .page-container { max-width: 1000px; margin: 20px auto; padding: 0 10px; }
+        img { width: 100%; height: auto; display: block; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    </style>
 </head>
-
 <body>
 
-<nav>
-    <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('books')">Featured Books</button>
-    <button onclick="showPage('about')">About</button>
-    <button onclick="showPage('written')">The Written Word</button>
-    <button onclick="showPage('contact')">Contact</button>
-</nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="FeatureBOOKS.html">Featured Books</a>
+        <a href="About Us.html">About Us</a>
+        <a href="Written Word.html">Written Word</a>
+        <a href="contact.html">Contact & Prices</a>
+    </nav>
 
-<section id="home" class="page active">
-    <img src="1.png" alt="SignatureBooks Home">
-</section>
+    <div class="page-container">
+        <!-- Displays your Written Word image -->
+        <img src="4.png" alt="Written Word">
+    </div>
 
-<section id="books" class="page">
-    <img src="2.png" alt="SignatureBooks Featured Books">
-</section>
+</body>
+</html>
+Use code with caution.5. Contact (contact.html)Open your contact.html file on GitHub, edit it, and paste this code:html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Prices - Signature Books</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background-color: #fcfbf7; text-align: center; }
+        nav { background: #2c3e50; padding: 15px; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1rem; }
+        nav a:hover { color: #b89742; }
+        .page-container { max-width: 1000px; margin: 20px auto; padding: 0 10px; }
+        img { width: 100%; height: auto; display: block; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
 
-<section id="about" class="page">
-    <img src="3.png" alt="About SignatureBooks">
-</section>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="FeatureBOOKS.html">Featured Books</a>
+        <a href="About Us.html">About Us</a>
+        <a href="Written Word.html">Written Word</a>
+        <a href="contact.html">Contact & Prices</a>
+    </nav>
 
-<section id="written" class="page">
-    <img src="4.png" alt="The Written Word">
-</section>
-
-<section id="contact" class="page">
-    <img src="5.png" alt="SignatureBooks Contact">
-</section>
-
-<script>
-function showPage(pageName) {
-    document.querySelectorAll('.page').forEach(function(page) {
-        page.classList.remove('active');
-    });
-
-    document.getElementById(pageName).classList.add('active');
-
-    window.scrollTo(0, 0);
-}
-</script>
+    <div class="page-container">
+        <!-- Displays your Contact, Books, and Prices image -->
+        <img src="5.png" alt="Contact, Books, and Prices">
+    </div>
 
 </body>
 </html>
