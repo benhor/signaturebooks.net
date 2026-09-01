@@ -72,7 +72,11 @@ html<!DOCTYPE html>
 
           <label for="amount">Price (USD):</label>
           <input type="text" name="amount" id="amount" value="15.99" readonly>
+<label for="shipping">Shipping &amp; Handling:</label>
+<input type="text" id="shipping" value="2.99" readonly>
 
+<label for="total">Total (USD):</label>
+<input type="text" id="total" value="18.98" readonly>
           <button type="submit">
             Buy Now via PayPal
           </button>
@@ -83,12 +87,19 @@ html<!DOCTYPE html>
       const prices = {
         "Hardcover": "15.99",
         "Perfectbound": "12.99",
+          
         "Ebook": "2.99"
       };
 
-      document.getElementById("format").addEventListener("change", function() {
-        document.getElementById("amount").value = prices[this.value];
-      });
+     document.getElementById("format").addEventListener("change", function() {
+  const price = parseFloat(prices[this.value]);
+  const shipping = this.value === "Ebook" ? 0 : 2.99;
+
+  document.getElementById("amount").value = price.toFixed(2);
+  document.getElementById("shipping").value = shipping.toFixed(2);
+  document.getElementById("total").value = (price + shipping).toFixed(2);
+  document.getElementById("paypalShipping").value = shipping.toFixed(2);
+});
     </script>
 
 
